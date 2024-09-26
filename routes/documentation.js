@@ -60,8 +60,8 @@ const docs = {
         id: "String - Post ID",
       },
       bodyParams: {
-        title: "String - Optional new title",
-        content: "String - Optional new content",
+        title: "String - New title",
+        content: "String - New content",
         tags: "String - Optional comma-separated tags",
         image: "File - Optional new image to upload",
       },
