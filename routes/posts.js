@@ -100,13 +100,13 @@ router.post(
       return res.status(400).json({ message: "Image is required" });
     }
 
-    const { title, content, tags } = req.body;
+    const { title, content, tags = "" } = req.body;
     const imagePath = req.file.path; // Get the image path
     const newPost = {
       id: uuidv4(),
       title,
       content,
-      tags: tags || [],
+      tags: tags.split(","),
       liked: false,
       image: `${BASE_URL}${imagePath}`, // Store the image path in the post
       comments: [],
@@ -143,10 +143,10 @@ router.put(
     const post = posts.find((p) => p.id === req.params.id);
     if (!post) return res.status(404).json({ message: "Post not found" });
 
-    const { title, content, tags } = req.body;
+    const { title, content, tags = "" } = req.body;
     post.title = title || post.title;
     post.content = content || post.content;
-    post.tags = tags || post.tags;
+    post.tags = tags ? tags.split(",") : post.tags;
     post.updatedAt = new Date();
 
     if (req.file) {
