@@ -120,7 +120,7 @@ router.post(
 
 router.get("/:id", (req, res) => {
   const { id } = req.params; // Get the post id from route parameters
-  const post = posts.find((p) => p.id === parseInt(id)); // Find the post by id
+  const post = posts.find((p) => p.id === id); // Find the post by id
 
   if (post) {
     res.json(post); // If post is found, return it
