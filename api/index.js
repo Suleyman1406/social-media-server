@@ -14,6 +14,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/posts", postsRouter);
 app.use("/comments", commentsRouter);
 app.use("/docs", documentationRouter);
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 const PORT = process.env.PORT || 3000;
 
