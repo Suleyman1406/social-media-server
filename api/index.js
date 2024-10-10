@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const postsRouter = require("./routes/posts");
-const commentsRouter = require("./routes/comments");
-const documentationRouter = require("./routes/documentation");
 const path = require("path");
+const postsRouter = require("../routes/posts");
+const commentsRouter = require("../routes/comments");
+const documentationRouter = require("../routes/documentation");
 
 const app = express();
 
